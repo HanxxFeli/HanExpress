@@ -27,7 +27,9 @@ export default function RootLayout( {children} ) {
         {/* User auth for entire app using Auth Provider */}
         <AuthProvider>
           {/* Header appears on every page */}
-            <Header />
+            <header className="sticky top-0">
+              <Header />
+            </header>
           
           {/* Main content (different for each page) */}
           <main>{children}</main>

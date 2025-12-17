@@ -24,7 +24,7 @@ const AuthContext = createContext({
  * @param props - Component props
  * @param props.children - Child components
  */
-export function AuthProvder( {children} ) { 
+export function AuthProvider( {children} ) { 
     const [user, setUser] = useState(null) // current user state 
     const [loading, setLoading] = useState(true) // authentication checking state
 
