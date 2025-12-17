@@ -15,7 +15,7 @@ const firebaseConfig = {
 };
 
 // Initiate firebase app
-const app = getApps().length() === 0 ? initializeApp(firebaseConfig) : getApps()[0] // if empty, it doesnt initialize
+const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0] // if empty, it doesnt initialize
 
 // authentication instance 
 export const auth = getAuth(app)

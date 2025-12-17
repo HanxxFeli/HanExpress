@@ -8,7 +8,7 @@ import { db } from '@/lib/firebase';
 import { useAuth } from '@/context/AuthContext';
 import ExpressionInput from '@/components/ExpressionInput';
 import ExpressionCard from '@/components/ExpressionCard';
-import { Save, Check } from 'lucide-react';
+import { Save, Check, Sparkles, Volume2, BookOpen, Clock } from 'lucide-react';
 
 export default function HomePage() {
   
@@ -84,7 +84,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] bg-linear-to-br from-blue-50 via-purple-50 to-pink-50">
+    <div className="min-h-svh bg-linear-to-br from-blue-50 via-purple-50 to-pink-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         
         {/* Hero section with title and description */}
@@ -144,37 +144,56 @@ export default function HomePage() {
 
         {/* "Why HanExpress?" section (shown when no results yet) */}
         {!results && !loading && (
-          <div className="mt-16 text-center">
-            <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Why HanExpress?</h3>
+          <div className="mt-16">
+            <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Why HanExpress?</h3>
+    
+            {/* Feature grid - 4 columns for individual cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               
-              {/* Feature grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Context-Aware</h4>
-                  <p className="text-gray-600 text-sm">
-                    Get expressions that match your exact intent, not just word-for-word translations
-                  </p>
+              {/* Card 1: Context-Aware */}
+              <div className="bg-white rounded-2xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center mb-4">
+                  <Sparkles className="w-6 h-6 text-blue-600" />
                 </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Audio Pronunciation</h4>
-                  <p className="text-gray-600 text-sm">
-                    Hear native pronunciation for every expression to improve your speaking
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Deep Learning</h4>
-                  <p className="text-gray-600 text-sm">
-                    Understand vocabulary, grammar, and cultural context behind each expression
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Save & Review</h4>
-                  <p className="text-gray-600 text-sm">
-                    Build your personal collection of expressions for future practice
-                  </p>
-                </div>
+                <h4 className="font-semibold text-gray-900 mb-2 text-lg">Context-Aware</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Get expressions that match your exact intent, not just word-for-word translations
+                </p>
               </div>
+
+              {/* Card 2: Audio Pronunciation */}
+              <div className="bg-white rounded-2xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center mb-4">
+                  <Volume2 className="w-6 h-6 text-purple-600" />
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2 text-lg">Audio Pronunciation</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Hear native pronunciation for every expression to improve your speaking
+                </p>
+              </div>
+
+              {/* Card 3: Deep Learning */}
+              <div className="bg-white rounded-2xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center mb-4">
+                  <BookOpen className="w-6 h-6 text-green-600" />
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2 text-lg">Deep Learning</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Understand vocabulary, grammar, and cultural context behind each expression
+                </p>
+              </div>
+
+              {/* Card 4: Save & Review */}
+              <div className="bg-white rounded-2xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 rounded-xl bg-pink-100 flex items-center justify-center mb-4">
+                  <Clock className="w-6 h-6 text-pink-600" />
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2 text-lg">Save & Review</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Build your personal collection of expressions for future practice
+                </p>
+              </div>
+
             </div>
           </div>
         )}
